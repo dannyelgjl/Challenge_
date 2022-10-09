@@ -1,10 +1,21 @@
 import React from 'react';
-import { View } from 'react-native';
+import Header from '../../components/Header';
+import api from '../../services/api';
 
-// import { Container } from './styles';
+import {Container} from './styles';
 
 const Posts: React.FC = () => {
-  return <View />;
-}
+  React.useEffect(() => {
+    api.get('posts').then(response => {
+      console.log(response.data);
+    });
+  }, []);
+
+  return (
+    <Container>
+      <Header title="Posts" />
+    </Container>
+  );
+};
 
 export default Posts;
