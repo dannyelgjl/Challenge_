@@ -9,7 +9,7 @@ GRAY: {
 },
 };
 const PRIMARY = {
-BLUE: '#0085FF',
+PRIMARY_BLUE: '#0077B6',
 BLUE_PRIMARY: '#14e3ff',
 };
 
@@ -18,10 +18,10 @@ BLUE: '#03BBF5',
 };
 
 const THEME = {
-NEUTRAL,
-PRIMARY,
-SECONDARY,
-FONT
+    NEUTRAL,
+    PRIMARY,
+    SECONDARY,
+    FONT
 };
 
 export default THEME;
