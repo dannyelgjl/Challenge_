@@ -6,16 +6,10 @@ import CalendarIcon from '../../assets/icons/calendar.svg';
 import StarIcon from '../../assets/icons/star.svg';
 
 import THEME from '../../theme/theme';
-
+import {ICard} from './types';
 import * as S from './styles';
 
-interface ICard {
-  isCompleted: boolean;
-  completed?: string;
-  title?: string;
-  subTitle?: string;
-  activeStatus?: boolean;
-}
+// ||
 
 const Card = ({
   completed,

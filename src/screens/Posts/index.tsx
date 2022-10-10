@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
-import {Title} from '../../components';
-import {limitStringTitle} from '../../utils';
-import PostsCard from '../../components/Card/PostsCard';
-import Header from '../../components/Header';
+import {Title, Header, PostsCard, Loading} from '../../components';
+
 import api from '../../services/api';
-import Loading from '../../components/Loading';
+import {limitStringTitle} from '../../utils';
+
 import {IPost} from './types';
 
 import * as S from './styles';
@@ -29,22 +28,16 @@ const Posts = () => {
       <Header title="Posts" />
       <S.Content>
         <Title title="YOURS POSTs" />
-        {posts ? (
-          <FlatList
-            ListEmptyComponent={<Loading />}
-            showsVerticalScrollIndicator={false}
-            data={posts}
-            keyExtractor={item => item.id}
-            renderItem={({item}) => (
-              <PostsCard
-                title={limitStringTitle(item.title)}
-                body={item.body}
-              />
-            )}
-          />
-        ) : (
-          <Loading />
-        )}
+
+        <FlatList
+          ListEmptyComponent={<Loading />}
+          showsVerticalScrollIndicator={false}
+          data={posts}
+          keyExtractor={(item: IPost) => String(item.id)}
+          renderItem={({item}) => (
+            <PostsCard title={limitStringTitle(item.title)} body={item.body} />
+          )}
+        />
       </S.Content>
     </S.Container>
   );

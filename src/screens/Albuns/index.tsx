@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
-import Card from '../../components/Card';
-import Header from '../../components/Header';
+import {Header, Loading, Card} from '../../components';
 import api from '../../services/api';
 import {IAlbums} from './types';
 import * as S from './styles';
-import Loading from '../../components/Loading';
 
 const Albuns = () => {
   const [albums, setAlbums] = useState<IAlbums[]>([]);
@@ -31,7 +29,7 @@ const Albuns = () => {
           ListEmptyComponent={<Loading />}
           showsVerticalScrollIndicator={false}
           data={albums}
-          keyExtractor={item => item.id}
+          keyExtractor={(item: IAlbums) => String(item.id)}
           renderItem={({item}) => <Card title="Album" subTitle={item.title} />}
         />
       </S.Content>

@@ -1,12 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
-import Card from '../../components/Card';
-import Header from '../../components/Header';
+import {Title, Header, Card, Loading} from '../../components';
 import api from '../../services/api';
 import {ITodo} from './types';
 import * as S from './styles';
-import Loading from '../../components/Loading';
-import {Title} from '../../components';
 
 const Todo: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
@@ -32,7 +29,7 @@ const Todo: React.FC = () => {
           ListEmptyComponent={<Loading />}
           showsVerticalScrollIndicator={false}
           data={todos}
-          keyExtractor={item => item.id}
+          keyExtractor={(item: ITodo) => String(item.id)}
           renderItem={({item}) => (
             <Card
               title="Completed:"
