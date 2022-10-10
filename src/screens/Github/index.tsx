@@ -9,7 +9,10 @@ const Github: React.FC = () => {
     <Container>
       <Header title="Github" />
 
-      <WebView source={{uri: 'https://github.com/dannyelgjl'}} />
+      <WebView
+        source={{uri: 'https://github.com/dannyelgjl'}}
+        showsVerticalScrollIndicator={false}
+      />
     </Container>
   );
 };
