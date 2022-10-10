@@ -20,15 +20,19 @@ export const Wrapper = styled.View`
   width: 100%;
 `;
 
-export const Title = styled.Text`
-  font-size: 20px;
-  font-weight: ${THEME.FONT.BOLD};
-  color: ${THEME.NEUTRAL.WHITE};
+export const TitleWrapper = styled.View`
   background-color: ${THEME.SECONDARY.SECONDARY_LIGHT_BLUE};
   padding-horizontal: 20px;
   padding-vertical: 8px;
   border-radius: 28px;
 `;
+
+export const Title = styled.Text`
+  font-size: 20px;
+  font-weight: ${THEME.FONT.BOLD};
+  color: ${THEME.NEUTRAL.WHITE};
+`;
+
 export const Positive = styled.Text<Completed>`
   color: ${({isCompleted}) =>
     isCompleted ? `${THEME.SECONDARY.SUCCESS}` : `${THEME.SECONDARY.RED}`};
