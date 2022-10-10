@@ -9,8 +9,6 @@ import THEME from '../../theme/theme';
 import {ICard} from './types';
 import * as S from './styles';
 
-// ||
-
 const Card = ({
   completed,
   isCompleted,
