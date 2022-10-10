@@ -25,9 +25,7 @@ const PostsCard = ({title, body}: IPostsCard) => {
     <DropShadow style={styles}>
       <S.Container>
         <S.Wrapper>
-          <S.Title numberOfLines={1} ellipsizeMode="tail">
-            {title}
-          </S.Title>
+          <S.Title>{title}</S.Title>
           <HeartIcon width={22} height={19} color={THEME.SECONDARY.RED} />
         </S.Wrapper>
 

@@ -31,7 +31,7 @@ const Posts = () => {
     <S.Container>
       <Header title="Posts" />
       <S.Content>
-        <S.Title>Your Posts</S.Title>
+        <S.Title>Yours Posts</S.Title>
         <FlatList
           showsVerticalScrollIndicator={false}
           data={posts}

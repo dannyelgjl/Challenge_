@@ -11,5 +11,5 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-size: 30px;
-  color: ${THEME.NEUTRAL.WHITE};
+  color: ${THEME.SECONDARY.SECONDARY_LIGHT_BLUE};
 `;
