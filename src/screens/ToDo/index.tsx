@@ -12,9 +12,14 @@ const Todo: React.FC = () => {
   console.log(todos[0]);
 
   useEffect(() => {
-    api.get('todos').then(response => {
-      setTodos(response.data);
-    });
+    api
+      .get('todos')
+      .then(response => {
+        setTodos(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }, []);
 
   return (
@@ -33,6 +38,7 @@ const Todo: React.FC = () => {
               subTitle={item.title}
               completed={item.completed ? 'YES' : 'NO'}
               isCompleted={item.completed}
+              activeStatus
             />
           )}
         />

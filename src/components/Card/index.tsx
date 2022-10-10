@@ -3,6 +3,7 @@ import DropShadow from 'react-native-drop-shadow';
 import DoneIcon from '../../assets/icons/done.svg';
 import NoDoneIcon from '../../assets/icons/no-completed.svg';
 import CalendarIcon from '../../assets/icons/calendar.svg';
+import StarIcon from '../../assets/icons/star.svg';
 
 import THEME from '../../theme/theme';
 
@@ -10,12 +11,19 @@ import * as S from './styles';
 
 interface ICard {
   isCompleted: boolean;
-  completed: string;
-  title: string;
-  subTitle: string;
+  completed?: string;
+  title?: string;
+  subTitle?: string;
+  activeStatus?: boolean;
 }
 
-const Card = ({completed, isCompleted, title, subTitle}: ICard) => {
+const Card = ({
+  completed,
+  isCompleted,
+  title,
+  subTitle,
+  activeStatus,
+}: ICard) => {
   const styles = {
     shadowColor: '#000',
     shadowOffset: {
@@ -45,7 +53,11 @@ const Card = ({completed, isCompleted, title, subTitle}: ICard) => {
             <S.Positive isCompleted={isCompleted}>{completed}</S.Positive>
           </S.Title>
 
-          {iconsStatus(isCompleted)}
+          {activeStatus ? (
+            iconsStatus(isCompleted)
+          ) : (
+            <StarIcon width={31} height={31} color={THEME.SECONDARY.YELLOW} />
+          )}
         </S.Wrapper>
 
         <S.SubTitle>{subTitle}</S.SubTitle>
