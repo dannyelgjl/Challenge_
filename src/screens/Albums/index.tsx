@@ -5,7 +5,7 @@ import api from '../../services/api';
 import {IAlbums} from './types';
 import * as S from './styles';
 
-const Albuns = () => {
+const Albums = () => {
   const [albums, setAlbums] = useState<IAlbums[]>([]);
 
   useEffect(() => {
@@ -39,4 +39,4 @@ const Albuns = () => {
   );
 };
 
-export default Albuns;
+export default Albums;

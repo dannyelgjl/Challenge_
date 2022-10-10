@@ -4,7 +4,7 @@ import PostsIcon from '../assets/icons/home.svg';
 import AlbumIcon from '../assets/icons/album.svg';
 import GithubIcon from '../assets/icons/github.svg';
 import ToDoIcon from '../assets/icons/todo.svg';
-import {Posts, ToDo, Albuns, Github} from '../screens';
+import {Posts, ToDo, Albums, Github} from '../screens';
 import THEME from '../theme/theme';
 
 const {Navigator, Screen} = createBottomTabNavigator();
@@ -42,8 +42,8 @@ const Routes = () => (
           />
         ),
       })}
-      name="Albuns"
-      component={Albuns}
+      name="Albums"
+      component={Albums}
     />
     <Screen
       options={() => ({
