@@ -1,14 +1,20 @@
 import React from 'react';
+import Card from '../../components/Card';
 import Header from '../../components/Header';
 
-import {Container} from './styles';
+import * as S from './styles';
 
-const ToDo: React.FC = () => {
+const Todo: React.FC = () => {
   return (
-    <Container>
-      <Header title="To-Do's" />
-    </Container>
+    <S.Container>
+      <Header title="To-do" />
+      <S.Content>
+        <Card />
+
+        <Card />
+      </S.Content>
+    </S.Container>
   );
 };
 
-export default ToDo;
+export default Todo;
