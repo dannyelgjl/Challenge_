@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
-import {Header, Loading, Card} from '../../components';
+import {Header, Loading, Card, Title} from '../../components';
 import api from '../../services/api';
 import {IAlbums} from './types';
 import * as S from './styles';
@@ -23,14 +23,16 @@ const Albuns = () => {
     <S.Container>
       <Header title="Albums" />
       <S.Content>
-        <S.Title>Yours Albums</S.Title>
+        <Title title="YOURS ALBUMs" />
 
         <FlatList
           ListEmptyComponent={<Loading />}
           showsVerticalScrollIndicator={false}
           data={albums}
           keyExtractor={(item: IAlbums) => String(item.id)}
-          renderItem={({item}) => <Card title="Album" subTitle={item.title} />}
+          renderItem={({item}) => (
+            <Card title="Album" subTitle={item.title} isCompleted />
+          )}
         />
       </S.Content>
     </S.Container>
