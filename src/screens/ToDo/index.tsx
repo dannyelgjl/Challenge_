@@ -6,11 +6,10 @@ import api from '../../services/api';
 import {ITodo} from './types';
 import * as S from './styles';
 import Loading from '../../components/Loading';
+import {Title} from '../../components';
 
 const Todo: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
-
-  console.log(todos[0]);
 
   useEffect(() => {
     api
@@ -27,27 +26,23 @@ const Todo: React.FC = () => {
     <S.Container>
       <Header title="To-Dos" />
       <S.Content>
-        <S.Title>Yours To-Do</S.Title>
+        <Title title="YOURS TO-DOs" />
 
-        {todos ? (
-          <FlatList
-            ListEmptyComponent={<Loading />}
-            showsVerticalScrollIndicator={false}
-            data={todos}
-            keyExtractor={item => item.id}
-            renderItem={({item}) => (
-              <Card
-                title="Completed:"
-                subTitle={item.title}
-                completed={item.completed ? 'YES' : 'NO'}
-                isCompleted={item.completed}
-                activeStatus
-              />
-            )}
-          />
-        ) : (
-          <Loading />
-        )}
+        <FlatList
+          ListEmptyComponent={<Loading />}
+          showsVerticalScrollIndicator={false}
+          data={todos}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => (
+            <Card
+              title="Completed:"
+              subTitle={item.title}
+              completed={item.completed ? 'YES' : 'NO'}
+              isCompleted={item.completed}
+              activeStatus
+            />
+          )}
+        />
       </S.Content>
     </S.Container>
   );

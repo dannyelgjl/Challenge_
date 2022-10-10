@@ -13,12 +13,6 @@ export const Content = styled.View`
   padding: 8px;
 `;
 
-export const Title = styled.Text`
-  font-size: 30px;
-  font-weight: ${THEME.FONT.BOLD};
-  color: ${THEME.PRIMARY.PRIMARY_BLUE};
-`;
-
 export const PostsList = styled(FlatList)`
   flex: 1;
 `;

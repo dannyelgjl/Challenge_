@@ -23,7 +23,7 @@ export const Wrapper = styled.View`
 export const Title = styled.Text`
   font-size: 20px;
   font-weight: ${THEME.FONT.BOLD};
-  color: white;
+  color: ${THEME.NEUTRAL.WHITE};
   background-color: ${THEME.SECONDARY.SECONDARY_LIGHT_BLUE};
   padding-horizontal: 20px;
   padding-vertical: 8px;
@@ -39,12 +39,6 @@ export const SubTitle = styled.Text`
   font-weight: ${THEME.FONT.BOLD};
   color: ${THEME.PRIMARY.PRIMARY_BLUE};
   margin-top: 8px;
-`;
-
-export const Description = styled.Text`
-  font-size: 14px;
-  color: black;
-  margin-top: 35px;
 `;
 
 export const DateContainer = styled.View`

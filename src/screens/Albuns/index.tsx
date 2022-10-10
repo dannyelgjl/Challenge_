@@ -10,7 +10,6 @@ import Loading from '../../components/Loading';
 const Albuns = () => {
   const [albums, setAlbums] = useState<IAlbums[]>([]);
 
-  console.log(albums[0]);
   useEffect(() => {
     api
       .get('albums')

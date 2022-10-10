@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
+import {Title} from '../../components';
 import {limitStringTitle} from '../../utils';
 import PostsCard from '../../components/Card/PostsCard';
 import Header from '../../components/Header';
@@ -27,7 +28,7 @@ const Posts = () => {
     <S.Container>
       <Header title="Posts" />
       <S.Content>
-        <S.Title>Yours Posts</S.Title>
+        <Title title="YOURS POSTs" />
         {posts ? (
           <FlatList
             ListEmptyComponent={<Loading />}

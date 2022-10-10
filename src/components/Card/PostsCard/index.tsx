@@ -2,13 +2,8 @@ import React from 'react';
 import DropShadow from 'react-native-drop-shadow';
 import HeartIcon from '../../../assets/icons/heart.svg';
 import THEME from '../../../theme/theme';
-
+import {IPostsCard} from './types';
 import * as S from './styles';
-
-interface IPostsCard {
-  title?: string;
-  body?: string;
-}
 
 const PostsCard = ({title, body}: IPostsCard) => {
   const styles = {

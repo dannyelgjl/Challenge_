@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import PostsIcon from '../assets/icons/home.svg';
 import AlbumIcon from '../assets/icons/album.svg';
