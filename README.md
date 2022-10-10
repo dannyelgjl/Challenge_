@@ -42,6 +42,12 @@ Challenge!
 
 - Projeto ainda está em fase de desenvolvimento! Em breve você conseguirá visualizar várias informações para utilizar no seu dia a dia ✈️
 
+## 🎨 Figma
+
+Challenge!
+
+- Aqui você pode encontrar todo o Design system do projeto, [Figma](https://www.figma.com/file/woKH9u2njJJI6TGxER7wVs/Challenge_?node-id=0%3A1) ✈️
+
 ## 🎮 Start
 
 - Passo 1: Utilize o comando `yarn install ou só yarn` para instalar as dependências do projeto;
