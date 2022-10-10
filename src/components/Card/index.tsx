@@ -40,11 +40,13 @@ const Card = ({
     <DropShadow style={styles}>
       <S.Container>
         <S.Wrapper>
-          <S.Title>
-            {title}{' '}
-            <S.Positive isCompleted={isCompleted}>{completed}</S.Positive>
-          </S.Title>
-
+          <S.TitleWrapper>
+            <S.Title>
+              {title}{' '}
+              <S.Positive isCompleted={isCompleted}>{completed}</S.Positive>
+            </S.Title>
+          </S.TitleWrapper>
+          
           {activeStatus ? (
             iconsStatus(isCompleted)
           ) : (
