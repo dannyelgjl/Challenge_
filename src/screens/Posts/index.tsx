@@ -30,6 +30,7 @@ const Posts = () => {
         <S.Title>Yours Posts</S.Title>
         {posts ? (
           <FlatList
+            ListEmptyComponent={<Loading />}
             showsVerticalScrollIndicator={false}
             data={posts}
             keyExtractor={item => item.id}

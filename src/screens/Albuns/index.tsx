@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import api from '../../services/api';
 import {IAlbums} from './types';
 import * as S from './styles';
+import Loading from '../../components/Loading';
 
 const Albuns = () => {
   const [albums, setAlbums] = useState<IAlbums[]>([]);
@@ -28,6 +29,7 @@ const Albuns = () => {
         <S.Title>Yours Albums</S.Title>
 
         <FlatList
+          ListEmptyComponent={<Loading />}
           showsVerticalScrollIndicator={false}
           data={albums}
           keyExtractor={item => item.id}

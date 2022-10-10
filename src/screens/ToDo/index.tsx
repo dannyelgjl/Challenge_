@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import api from '../../services/api';
 import {ITodo} from './types';
 import * as S from './styles';
+import Loading from '../../components/Loading';
 
 const Todo: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
@@ -28,20 +29,25 @@ const Todo: React.FC = () => {
       <S.Content>
         <S.Title>Yours To-Do</S.Title>
 
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={todos}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => (
-            <Card
-              title="Completed:"
-              subTitle={item.title}
-              completed={item.completed ? 'YES' : 'NO'}
-              isCompleted={item.completed}
-              activeStatus
-            />
-          )}
-        />
+        {todos ? (
+          <FlatList
+            ListEmptyComponent={<Loading />}
+            showsVerticalScrollIndicator={false}
+            data={todos}
+            keyExtractor={item => item.id}
+            renderItem={({item}) => (
+              <Card
+                title="Completed:"
+                subTitle={item.title}
+                completed={item.completed ? 'YES' : 'NO'}
+                isCompleted={item.completed}
+                activeStatus
+              />
+            )}
+          />
+        ) : (
+          <Loading />
+        )}
       </S.Content>
     </S.Container>
   );
