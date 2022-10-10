@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native';
+import {limitStringTitle} from '../../utils';
 import PostsCard from '../../components/Card/PostsCard';
 import Header from '../../components/Header';
 import api from '../../services/api';
@@ -20,12 +21,6 @@ const Posts = () => {
       setPosts(response.data);
     });
   }, []);
-
-  const limitStringTitle = (title: string) => {
-    const post = title.length < 15 ? title : title.substring(0, 20) + '...';
-
-    return post;
-  };
 
   return (
     <S.Container>

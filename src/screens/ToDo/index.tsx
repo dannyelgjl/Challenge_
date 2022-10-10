@@ -3,14 +3,8 @@ import {FlatList} from 'react-native';
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 import api from '../../services/api';
-
+import {ITodo} from './types';
 import * as S from './styles';
-
-interface ITodo {
-  id: number;
-  completed: boolean;
-  title: string;
-}
 
 const Todo: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);

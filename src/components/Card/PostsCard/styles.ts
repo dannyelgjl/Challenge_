@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import THEME from '../../../theme/theme';
 
 export const Container = styled.View`
   width: 100%;
@@ -17,12 +18,12 @@ export const Wrapper = styled.View`
 
 export const Title = styled.Text`
   font-size: 28px;
-  font-weight: bold;
-  color: black;
+  font-weight: ${THEME.FONT.BOLD};
+  color: ${THEME.PRIMARY.PRIMARY_BLUE};
 `;
 
 export const Description = styled.Text`
   font-size: 14px;
-  color: black;
+  color: ${THEME.PRIMARY.PRIMARY_BLUE};
   margin-top: 35px;
 `;
