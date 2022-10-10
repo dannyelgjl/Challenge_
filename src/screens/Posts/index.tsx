@@ -4,6 +4,7 @@ import {limitStringTitle} from '../../utils';
 import PostsCard from '../../components/Card/PostsCard';
 import Header from '../../components/Header';
 import api from '../../services/api';
+import Loading from '../../components/Loading';
 import {IPost} from './types';
 
 import * as S from './styles';
@@ -27,14 +28,21 @@ const Posts = () => {
       <Header title="Posts" />
       <S.Content>
         <S.Title>Yours Posts</S.Title>
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={posts}
-          keyExtractor={item => item.id}
-          renderItem={({item}) => (
-            <PostsCard title={limitStringTitle(item.title)} body={item.body} />
-          )}
-        />
+        {posts ? (
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={posts}
+            keyExtractor={item => item.id}
+            renderItem={({item}) => (
+              <PostsCard
+                title={limitStringTitle(item.title)}
+                body={item.body}
+              />
+            )}
+          />
+        ) : (
+          <Loading />
+        )}
       </S.Content>
     </S.Container>
   );
